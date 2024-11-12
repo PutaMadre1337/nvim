@@ -1,19 +1,16 @@
 return {
   "nvimdev/dashboard-nvim",
-  lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
+  lazy = false,
   opts = function()
-    logo = require("plugins.ui.logos.001")
+    local logo = require("plugins.ui.logos.030")
 
     local opts = {
       theme = "doom",
       hide = {
-        -- this is taken care of by lualine
-        -- enabling this messes up the actual laststatus setting after loading a file
         statusline = false,
       },
       config = {
         header = vim.split(logo, "\n"),
-        -- stylua: ignore
         center = {
           { action = 'lua LazyVim.pick()()', desc = " Hайти файл", icon = " ", key = "f" },
           { action = "ene | startinsert", desc = " Hовый файл", icon = " ", key = "n" },
