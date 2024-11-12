@@ -1,5 +1,10 @@
 local map = vim.keymap.set
 
+-- require("teleport"):setup()
+-- map("n", "t", ":Teleport forwards<cr>", { noremap = true })
+-- map("n", "T", ":Teleport backwards<cr>", { noremap = true })
+-- map("n", "qq", ":TeleportExit<cr>", { noremap = true })
+
 -- Spider
 map(
   { "n", "o", "x" },
