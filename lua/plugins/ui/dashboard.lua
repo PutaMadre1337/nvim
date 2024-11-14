@@ -2,7 +2,7 @@ return {
   "nvimdev/dashboard-nvim",
   lazy = false,
   opts = function()
-    local logo = require("plugins.ui.logos.030")
+    local logo = require("plugins.ui.logos.005")
 
     local opts = {
       theme = "doom",

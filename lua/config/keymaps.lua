@@ -1,4 +1,7 @@
+require('config.functions')
 local map = vim.keymap.set
+
+map("n", "<F1>", "<cmd>SearchSelected<cr>")
 
 -- require("teleport"):setup()
 -- map("n", "t", ":Teleport forwards<cr>", { noremap = true })
@@ -38,7 +41,9 @@ map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
 map("i", "<C-h>", "<Left>", { desc = "Go to Left Window", remap = true })
+map("i", "<C-д>", "<Left>", { desc = "Go to Left Window", remap = true })
 map("i", "<C-l>", "<Right>", { desc = "Go to Right Window", remap = true })
+map("i", "<C-р>", "<Right>", { desc = "Go to Right Window", remap = true })
 
 
 -- Resize window using <ctrl> arrow keys
