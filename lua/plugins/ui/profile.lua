@@ -5,14 +5,16 @@ return {
     local comp = require("profile.components")
     local win_width = vim.o.columns
     require("profile").setup({
-      avatar_path = "/home/username/Pictures/gowall/Done/devushka_angel_v_razorvannoj_odejde_i_okrovavlennaja_sidit.jpg",
+
+      avatar_path =
+      "/home/username/.config/nvim/lua/plugins/ui/pictures/molodaja_devushka_v_prostom_krestjanskom_plate_obshaetsja_s.png",
       -- avatar position options
       avatar_opts = {
-        avatar_width = 100,
-        avatar_height = 100,
-        avatar_x = math.floor((win_width - 15) / 3),
-        avatar_y = 7,
-        force_blank = true, -- if true, will create some blank lines (avatar_height + avatar_y)
+        avatar_width = 150,
+        avatar_height = 150,
+        avatar_x = 60,
+        avatar_y = 20,
+        force_blank = false, -- if true, will create some blank lines (avatar_height + avatar_y)
       },
 
       git_contributions = {
@@ -45,10 +47,10 @@ return {
         --    '.contributions | [ .[] | select((.date >= $start) and (.date <= $end)) ] | sort_by(.date) | (.[0].date | strptime("%%Y-%%m-%%d") | strftime("%%w") | tonumber) as $wd | map(.count) | ([range(0, $wd) ] | map(0)) + . | . as $array | reduce range(0; length; 7) as $i ({}; . + {($i/7+1 | tostring): $array[$i:$i+7] })' ]],
       },
       hide = {
-        statusline = true,
-        tabline = true,
+        statusline = false,
+        tabline = false,
       },
-
+      disable_keys = { "h", "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
       -- Customize the content to render
       format = function()
         -- render avatar
@@ -87,8 +89,8 @@ L -> Lazy
             }
           end,
           hl = {
-            border = "ProfileBlue",
-            text = "ProfileRed",
+            border = "ProfileWhite",
+            text = "ProfileWhite",
           },
         })
         comp:separator_render()
@@ -102,7 +104,7 @@ L -> Lazy
         ["r"] = "<cmd>lua require('telescope.builtin').oldfiles()<cr>",
         ["f"] = "lua LazyVim.pick()()",
         ["c"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/.config/nvim' })<cr>",
-        ["h"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/.config/hypr' })<cr>",
+        ["h"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/.config/hypr/' })<cr>",
         ["m"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/Documents/Notes/' })<cr>",
         ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
         ["s"] = "<cmd>lua require('persistence').load()<cr>",

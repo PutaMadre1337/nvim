@@ -41,7 +41,6 @@ map("i", "<C-р>", "<Left>", { desc = "Go to Left Window", remap = true })
 map("i", "<C-l>", "<Right>", { desc = "Go to Right Window", remap = true })
 map("i", "<C-д>", "<Right>", { desc = "Go to Right Window", remap = true })
 
-
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
@@ -84,8 +83,6 @@ map("i", ";", ";<c-g>u")
 
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
-map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
-
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
@@ -96,6 +93,7 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
 map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+map("n", "<leader>gq", "<cmd>GitConflictListQf<cr>", { desc = "Git Conflict List" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
@@ -127,7 +125,10 @@ map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
 map("n", "<leader>L", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog" })
 
-map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+local Util = require("lazyvim.util")
+vim.keymap.set("n", "<C-/>", function()
+  Util.terminal(nil, { border = "rounded" })
+end, { desc = "Term" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
