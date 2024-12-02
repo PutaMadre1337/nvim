@@ -1,6 +1,5 @@
 return {
   "atiladefreitas/dooing",
-  lazy = true,
   config = function()
     require("dooing").setup({
       save_path = vim.fn.stdpath('data') .. '/dooing_todos.json',

@@ -3,11 +3,10 @@ return {
   dependencies = { "3rd/image.nvim" },
   config = function()
     local comp = require("profile.components")
-    local win_width = vim.o.columns
     require("profile").setup({
 
       avatar_path =
-      "/home/username/.config/nvim/lua/plugins/ui/pictures/molodaja_devushka_v_prostom_krestjanskom_plate_obshaetsja_s.png",
+      "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_ekaj_stoit_nochu_pri_svete_luni_na.png",
       -- avatar position options
       avatar_opts = {
         avatar_width = 150,

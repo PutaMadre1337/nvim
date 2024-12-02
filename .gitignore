@@ -7,3 +7,4 @@ foo.*
 *.log
 data
 lua/plugins/ui/logos/004.lua
+nav.md
