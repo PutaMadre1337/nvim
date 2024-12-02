@@ -136,12 +136,12 @@ return {
       -- The 'level' is used to index into the list using a clamp
       -- Highlight for the heading icon and extends through the entire line
       backgrounds = {
-        'RenderMarkdownH1Bg',
-        'RenderMarkdownH2Bg',
-        'RenderMarkdownH3Bg',
-        'RenderMarkdownH4Bg',
-        'RenderMarkdownH5Bg',
-        'RenderMarkdownH6Bg',
+        '000000',
+        '1C1C1C',
+        '383838',
+        '545454',
+        '707070',
+        '8C8C8C',
       },
       -- The 'level' is used to index into the list using a clamp
       -- Highlight for the heading and sign icons

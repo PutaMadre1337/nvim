@@ -23,7 +23,6 @@ return {
       })
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
-      local neocodeium = require("neocodeium")
       local defaults = require("cmp.config.default")()
       local auto_select = true
       return {
@@ -53,7 +52,7 @@ return {
           { name = "buffer" },
         }),
         formatting = {
-          format = function(entry, item)
+          format = function(item)
             local icons = LazyVim.config.icons.kinds
             if icons[item.kind] then
               item.kind = icons[item.kind] .. item.kind
