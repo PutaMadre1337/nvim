@@ -1,8 +1,6 @@
 return {
-
-  "LazyVim/LazyVim",
-  opts = {
-    colorscheme = "coal",
-  },
-
+  { "typicode/bg.nvim", lazy = false },
+  { "LazyVim/LazyVim", opts = {
+    colorscheme = "sunbather",
+  } },
 }
