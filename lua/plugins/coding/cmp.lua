@@ -8,21 +8,9 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
     },
-    -- Not all LSP servers add brackets when completing a function.
-    -- To better deal with this, LazyVim adds a custom option to cmp,
-    -- that you can configure. For example:
-    --
-    -- ```lua
-    -- ```
-
-    opts = function(_, opts)
-      table.insert(opts.sources, 1, {
-        name = "codeium",
-        group_index = 1,
-        priority = 100,
-      })
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+    opts = function()
       local cmp = require("cmp")
+      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local defaults = require("cmp.config.default")()
       local auto_select = true
       return {
@@ -43,8 +31,10 @@ return {
             cmp.abort()
             fallback()
           end,
+          ["<tab>"] = function(fallback)
+            return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+          end,
         }),
-
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "path" },
@@ -52,7 +42,7 @@ return {
           { name = "buffer" },
         }),
         formatting = {
-          format = function(item)
+          format = function(entry, item)
             local icons = LazyVim.config.icons.kinds
             if icons[item.kind] then
               item.kind = icons[item.kind] .. item.kind
@@ -73,13 +63,37 @@ return {
           end,
         },
         experimental = {
-          ghost_text = {
+          -- only show ghost text when we show ai completions
+          ghost_text = vim.g.ai_cmp and {
             hl_group = "CmpGhostText",
-          },
+          } or false,
         },
         sorting = defaults.sorting,
       }
     end,
     main = "lazyvim.util.cmp",
-  }
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "hrsh7th/cmp-emoji" },
+    },
+    opts = function(_, opts)
+      table.insert(opts.sources, {
+        { name = "emoji" },
+        { name = "orgmode" },
+      })
+      local cmp = require("cmp")
+      opts.window = {
+        completion = cmp.config.window.bordered({}),
+        documentation = cmp.config.window.bordered({}),
+      }
+      -- Set view to follow cursor while typing
+      opts.view = {
+        entries = {
+          follow_cursor = true,
+        },
+      }
+    end,
+  },
 }
