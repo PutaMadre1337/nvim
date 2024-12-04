@@ -1,4 +1,4 @@
-require('config.functions')
+require("config.functions")
 local map = vim.keymap.set
 
 map("n", "<leader>vq", "<cmd>Quicknotes<cr>", { desc = "Open quicknotes" })
@@ -6,26 +6,11 @@ map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" }
 map("n", "t", "<cmd>Dooing<cr>", { desc = "Clear quicknotes" })
 
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
-map('x', '<leader>P', '"_c<Esc>p', { desc = 'Paste without copying into register' })
+map("x", "<leader>P", '"_c<Esc>p', { desc = "Paste without copying into register" })
 
-map(
-  { "n", "o", "x" },
-  "w",
-  "<cmd>lua require('spider').motion('w')<CR>",
-  { desc = "Spider-w" }
-)
-map(
-  { "n", "o", "x" },
-  "e",
-  "<cmd>lua require('spider').motion('e')<CR>",
-  { desc = "Spider-e" }
-)
-map(
-  { "n", "o", "x" },
-  "b",
-  "<cmd>lua require('spider').motion('b')<CR>",
-  { desc = "Spider-b" }
-)
+map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -124,12 +109,14 @@ map("n", "<leader>qw", "<cmd>wa<cr>", { desc = "Write All" })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
-map("n", "<leader>L", function() LazyVim.news.changelog() end, { desc = "LazyVim Changelog" })
+map("n", "<leader>L", function()
+  LazyVim.news.changelog()
+end, { desc = "LazyVim Changelog" })
 
-local Util = require("lazyvim.util")
-vim.keymap.set("n", "<C-/>", function()
-  Util.terminal(nil, { border = "rounded" })
-end, { desc = "Term" })
+-- map("n", "<c-/>", function()
+--   Snacks.terminal(nil, { cwd = LazyVim.root(), border = "rounded" })
+-- end, { desc = "Terminal (Root Dir)" })
+
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
