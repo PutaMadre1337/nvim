@@ -1,7 +1,7 @@
 return {
   {
     "Kurama622/profile.nvim",
-    enabled = false,
+    enabled = true,
     dependencies = { "3rd/image.nvim" },
     config = function()
       local comp = require("profile.components")
@@ -29,7 +29,7 @@ return {
           statusline = false,
           tabline = false,
         },
-        disable_keys = { "h", "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
+        disable_keys = { "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
         format = function()
           comp:avatar()
           comp:text_component_render({
@@ -102,7 +102,7 @@ L -> Lazy
   },
   {
     "3rd/image.nvim",
-    enabled = false,
+    enabled = true,
     build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
     opts = {},
   },
