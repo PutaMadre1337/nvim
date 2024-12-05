@@ -58,7 +58,7 @@ N -> New file
                   description = [[
 Q -> Quit
 S -> Restore session
-L -> Lazy
+L -> List session
 ]],
                 },
               }
@@ -85,7 +85,7 @@ L -> Lazy
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "ene | startinsert",
-          ["l"] = "<cmd>Lazy<cr>",
+          ["l"] = "<cmd>lua require('persistence').select()<cr>",
         },
       }
       vim.api.nvim_create_autocmd("FileType", {
