@@ -7,7 +7,7 @@ return {
       local comp = require("profile.components")
       require("profile").setup({
 
-        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_ekaj_stoit_nochu_pri_svete_luni_na.png",
+        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_demon_v_krovavih_shramah_sidit_na_demonicheskom.jpg",
         avatar_opts = {
           avatar_width = 150,
           avatar_height = 150,
@@ -33,7 +33,11 @@ return {
         format = function()
           comp:avatar()
           comp:text_component_render({
-            -- comp:text_component("", "center", "ProfileRed"),
+            -- comp:text_component(function()
+            --   local stats = require("lazy").stats()
+            --   local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            --   return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+            -- end, "center", "ProfileRed"),
             -- comp:text_component("──── By Kurama622", "right", "ProfileBlue"),
           })
           comp:separator_render()
@@ -51,6 +55,7 @@ M -> Notes
 R -> Recently
 F -> Find files
 N -> New file
+D -> Development
 ]],
                 },
                 {
@@ -83,6 +88,7 @@ L -> List session
           ["m"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/Documents/Notes/' })<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
+          ["d"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/Development/' })<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "ene | startinsert",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",
