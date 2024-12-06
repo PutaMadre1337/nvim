@@ -7,7 +7,7 @@ return {
       local comp = require("profile.components")
       require("profile").setup({
 
-        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_demon_v_krovavih_shramah_sidit_na_demonicheskom.jpg",
+        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_demon_v_krovavih_shramah_sidit_na_demonicheskom.png",
         avatar_opts = {
           avatar_width = 150,
           avatar_height = 150,
@@ -31,17 +31,6 @@ return {
         },
         disable_keys = { "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
         format = function()
-          comp:avatar()
-          comp:text_component_render({
-            -- comp:text_component(function()
-            --   local stats = require("lazy").stats()
-            --   local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-            --   return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
-            -- end, "center", "ProfileRed"),
-            -- comp:text_component("──── By Kurama622", "right", "ProfileBlue"),
-          })
-          comp:separator_render()
-
           comp:card_component_render({
             type = "table",
             content = function()
