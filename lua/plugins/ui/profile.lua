@@ -31,6 +31,8 @@ return {
         },
         disable_keys = { "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
         format = function()
+          comp:avatar()
+          comp:separator_render()
           comp:card_component_render({
             type = "table",
             content = function()

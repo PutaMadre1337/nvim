@@ -1,3 +1,9 @@
 return {
-  { 'huyvohcmc/atlas.vim' },
+  {
+    "huyvohcmc/atlas.vim",
+    { "typicode/bg.nvim", lazy = false },
+    { "LazyVim/LazyVim", opts = {
+      colorscheme = "atlas",
+    } },
+  },
 }

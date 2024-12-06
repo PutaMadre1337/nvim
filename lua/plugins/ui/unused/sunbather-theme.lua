@@ -1,7 +1,7 @@
 return {
-  { "ntk148v/komau.vim" },
+  { "nikolvs/vim-sunbather" },
   { "typicode/bg.nvim", lazy = false },
   { "LazyVim/LazyVim", opts = {
-    colorscheme = "komau",
+    colorscheme = "sunbather",
   } },
 }
