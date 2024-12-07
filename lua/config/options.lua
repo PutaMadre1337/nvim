@@ -5,13 +5,15 @@ vim.g.lazyvim_picker = "auto"
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.g.trouble_lualine = true
+
 local opt = vim.opt
+
 opt.autowrite = true
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
 opt.confirm = true
-opt.cursorline = true
+opt.cursorline = false
 opt.expandtab = true
 opt.fillchars = {
   foldopen = "",

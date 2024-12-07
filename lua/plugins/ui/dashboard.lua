@@ -36,7 +36,7 @@ return {
               end,
               desc = " Bыход",
               icon = " ",
-              key = "q",
+              -- key = "q",
             },
           },
           footer = function()
