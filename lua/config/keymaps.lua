@@ -6,7 +6,14 @@ map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" }
 map("n", "t", "<cmd>Dooing<cr>", { desc = "Clear quicknotes" })
 
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
-map("x", "<leader>P", '"_c<Esc>p', { desc = "Paste without copying into register" })
+map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })
+
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
+
+map("n", "<C-c>", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Search and replace word under the cursor" })
+
+map("n", "yc", "yy<cmd>normal gcc<cr>p", { desc = "Duplicate a line and comment out the first line" })
+map({ "n", "v" }, "<cr>", "<cmd>normal gcc<cr>")
 
 map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
 map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })

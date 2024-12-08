@@ -3,7 +3,7 @@ vim.g.maplocalleader = "\\"
 vim.g.autoformat = true
 vim.g.lazyvim_picker = "auto"
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
-vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
+vim.g.root_spec = { "lsp", { ".git", "lua", "go.mod", "cmd" }, "cwd" }
 vim.g.trouble_lualine = true
 
 local opt = vim.opt
