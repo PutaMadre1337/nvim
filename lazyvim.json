@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.neogen",
     "lazyvim.plugins.extras.ui.mini-indentscope"
   ],
   "news": {
