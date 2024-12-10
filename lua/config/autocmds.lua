@@ -155,6 +155,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "go" },
+  callback = function()
+    vim.keymap.set("n", "<leader>ct", "<cmd>!go mod tidy<cr>", { desc = "Go mod tidy" })
+  end,
+})
+
 -- Fix conceallevel for json files
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("json_conceal"),

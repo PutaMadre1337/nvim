@@ -1,8 +1,7 @@
 return {
   {
     "nvimdev/dashboard-nvim",
-    enabled = false,
-    lazy = false,
+    cond = (vim.g.neovide or false),
     opts = function()
       local logo = require("plugins.ui.logos.026")
 
@@ -36,7 +35,7 @@ return {
               end,
               desc = " Bыход",
               icon = " ",
-              -- key = "q",
+              key = "q",
             },
           },
           footer = function()

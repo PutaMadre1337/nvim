@@ -1,6 +1,7 @@
 return {
   {
     "Kurama622/profile.nvim",
+    cond = not (vim.g.neovide or false),
     enabled = true,
     dependencies = { "3rd/image.nvim" },
     config = function()
@@ -99,6 +100,7 @@ L -> List session
   },
   {
     "3rd/image.nvim",
+    cond = not (vim.g.neovide or false),
     enabled = true,
     build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
     opts = {},

@@ -8,7 +8,7 @@ map("n", "t", "<cmd>Dooing<cr>", { desc = "Clear quicknotes" })
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
 map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })
 
-map("n", "<C-a>", "ggVG", { desc = "Select all" })
+map("n", "<C-g>", "ggVG", { desc = "Select all" })
 
 map("n", "<C-c>", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Search and replace word under the cursor" })
 
@@ -19,9 +19,7 @@ map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc
 map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
