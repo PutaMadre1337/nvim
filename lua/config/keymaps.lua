@@ -71,7 +71,7 @@ map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>wa<cr><esc>", { desc = "Save File" })
 
 map("v", "<", "<gv")
 map("v", ">", ">gv")
@@ -108,7 +108,7 @@ map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
-map("n", "<leader>qw", "<cmd>wa<cr>", { desc = "Write All" })
+map("n", "<leader>qw", "<cmd>wqa<cr>", { desc = "Write All And Exit" })
 
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })

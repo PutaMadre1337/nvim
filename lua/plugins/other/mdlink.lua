@@ -1,9 +1,11 @@
 return {
-  'Nedra1998/nvim-mdlink',
+  "Nedra1998/nvim-mdlink",
+  lazy = true,
+  ft = "markdown",
   config = function()
-    require('nvim-mdlink').setup({
+    require("nvim-mdlink").setup({
       keymap = true,
-      cmp = true
+      cmp = true,
     })
-  end
+  end,
 }

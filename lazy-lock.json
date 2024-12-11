@@ -66,6 +66,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "7674543331701d05dc9f878e1fe62d1107dc2f5e" },
   "smear-cursor.nvim": { "branch": "main", "commit": "ee62ace831461704cf3733414820328451e1ead3" },
   "snacks.nvim": { "branch": "main", "commit": "974bccb126b6b5d7170c519c380207069d23f557" },
+  "spelunk.nvim": { "branch": "main", "commit": "74568c8a6ac2201fabe6c60dba5d86b0b3b697b5" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" },
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },

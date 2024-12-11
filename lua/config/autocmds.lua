@@ -156,7 +156,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "go" },
+  pattern = { "go", "gomod" },
   callback = function()
     vim.keymap.set("n", "<leader>ct", "<cmd>!go mod tidy<cr>", { desc = "Go mod tidy" })
   end,
