@@ -73,14 +73,14 @@ L -> List session
       vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>Profile<cr>", { silent = true })
       local user_mappings = {
         n = {
-          ["r"] = "<cmd>lua require('telescope.builtin').oldfiles()<cr>",
+          ["r"] = "<cmd>FzfLua oldfiles<cr>",
           ["f"] = "lua LazyVim.pick()()",
-          ["c"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/.config/nvim' })<cr>",
-          ["h"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/.config/hypr/' })<cr>",
-          ["m"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/Documents/Notes/' })<cr>",
+          ["c"] = "<cmd>FzfLua files cwd='$HOME/Documents/.config/nvim'<cr>",
+          ["h"] = "<cmd>FzfLua files cwd='$HOME/.config/hypr'<cr>",
+          ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
-          ["d"] = "<cmd>lua require('telescope.builtin').find_files({ cwd = '$HOME/Development/' })<cr>",
+          ["d"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "ene | startinsert",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",

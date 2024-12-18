@@ -146,12 +146,36 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = augroup("wrap_spell"),
+--   pattern = { "markdown" },
+--   callback = function()
+--     vim.cmd("AerialOpen")
+--
+--     -- Получаем текущее окно
+--     local current_window = vim.api.nvim_get_current_win()
+--     -- Получаем номер буфера в текущем окне
+--     local buf = vim.api.nvim_win_get_buf(current_window)
+--     -- Получаем тип файла для этого буфера
+--     local filetype = vim.bo[buf].filetype
+--
+--     if filetype == "aerial" then
+--       vim.cmd("normal! <C-w>w")
+--     end
+--   end,
+-- })
+
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
   pattern = { "markdown" },
   callback = function()
-    vim.cmd("AerialOpen")
-    vim.cmd("normal <C-w>w")
+    -- Maps for markdown
+    vim.keymap.set("n", "<<", function()
+      vim.cmd("normal! F#")
+      vim.cmd("normal! x")
+    end)
+
+    vim.keymap.set("n", ">>", "I#<esc>")
   end,
 })
 
