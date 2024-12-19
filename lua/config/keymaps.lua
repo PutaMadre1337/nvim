@@ -117,9 +117,9 @@ map("n", "<leader>L", function()
   LazyVim.news.changelog()
 end, { desc = "LazyVim Changelog" })
 
-map("n", "<c-/>", function()
-  Snacks.terminal("fish", { cwd = LazyVim.root() }, { border = "rounded" })
-end, { desc = "Terminal (Root Dir)" })
+-- map("n", "<c-/>", function()
+--   Snacks.terminal("fish", { cwd = LazyVim.root(), border = "rounded" })
+-- end, { desc = "Terminal (Root Dir)" })
 
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
