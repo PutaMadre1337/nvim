@@ -1,0 +1,17 @@
+{
+  "package main": {
+    "prefix": "main",
+    "body": [
+      "package main",
+      "",
+      "func main() {",
+      "  $1",
+      "}"
+    ],
+    "luasnip": {
+      "priority": 3000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  }
+}

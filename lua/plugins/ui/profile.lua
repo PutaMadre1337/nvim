@@ -82,7 +82,7 @@ L -> List session
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
           ["d"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
           ["q"] = "<cmd>q<cr>",
-          ["n"] = "ene | startinsert",
+          ["n"] = "<cmd>ene | startinsert<cr>",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",
         },
       }
