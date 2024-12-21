@@ -7,11 +7,14 @@
       "func main() {",
       "  $1",
       "}"
-    ],
-    "luasnip": {
-      "priority": 3000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    ]
+  },
+  "error": {
+    "prefix": "iferr",
+    "body": [
+      "if err != nil {",
+      "log.Println(err)",
+      "}"
+    ]
   }
 }

@@ -15,6 +15,16 @@
       "```"
     ]
   },
+  "gomain": {
+    "prefix": "gomain",
+    "body": [
+      "```go",
+      "func main() {",
+      "  $1",
+      "}",
+      "```"
+    ]
+  },
   "lua": {
     "prefix": "lua",
     "body": [

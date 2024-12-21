@@ -10,10 +10,11 @@ return {
       statuscolumn = { enabled = false }, -- we set this in options.lua
       toggle = { map = LazyVim.safe_keymap_set },
       words = { enabled = true },
+      profiler = { enabled = false },
     },
   -- stylua: ignore
   keys = {
-    { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+    { "<leader>snn", function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
   },
   },

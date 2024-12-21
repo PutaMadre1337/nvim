@@ -8,7 +8,7 @@ return {
       local comp = require("profile.components")
       require("profile").setup({
 
-        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_demon_v_krovavih_shramah_sidit_na_demonicheskom.png",
+        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_demon_v_krovavih_shramah_sidit_na_demonicheskom.jpg",
         avatar_opts = {
           avatar_width = 150,
           avatar_height = 150,
@@ -74,13 +74,13 @@ L -> List session
       local user_mappings = {
         n = {
           ["r"] = "<cmd>FzfLua oldfiles<cr>",
-          ["f"] = "lua LazyVim.pick()()",
+          ["f"] = "<cmd>lua LazyVim.pick()()<cr>",
           ["c"] = "<cmd>FzfLua files cwd='$HOME/.config/nvim'<cr>",
           ["h"] = "<cmd>FzfLua files cwd='$HOME/.config/hypr'<cr>",
           ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
-          ["d"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
+          ["d"] = "<cmd>FzfLua files cwd='$HOME/Development/Golang/Pet-Projects/'<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "<cmd>ene | startinsert<cr>",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",

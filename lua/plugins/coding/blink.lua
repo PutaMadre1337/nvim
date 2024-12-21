@@ -37,6 +37,7 @@ return {
     },
     completion = {
       accept = {
+        border = "rounded",
         -- experimental auto-brackets support
         auto_brackets = {
           enabled = true,
@@ -54,6 +55,7 @@ return {
         auto_show_delay_ms = 200,
       },
       ghost_text = {
+        border = "rounded",
         enabled = vim.g.ai_cmp,
       },
     },
