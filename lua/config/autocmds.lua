@@ -26,7 +26,6 @@ local function update_diagnostics()
   })
 end
 update_diagnostics()
-
 autocmd("CursorMoved", {
   callback = function()
     local win_type = vim.fn.win_gettype()
