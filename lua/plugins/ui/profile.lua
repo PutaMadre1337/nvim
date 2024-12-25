@@ -8,7 +8,7 @@ return {
       local comp = require("profile.components")
       require("profile").setup({
 
-        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/devushka_demon_v_krovavih_shramah_sidit_na_demonicheskom.jpg",
+        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/yor_forger_jor_fordjer_s_zolotimi_ukrashenijami.png",
         avatar_opts = {
           avatar_width = 150,
           avatar_height = 150,
