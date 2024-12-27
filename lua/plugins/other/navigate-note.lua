@@ -1,5 +1,6 @@
 return {
   "you-n-g/navigate-note.nvim",
+  event = "VeryLazy",
   opts = {
     filename = "nav.md",
     width = 0.6,
@@ -19,5 +20,5 @@ return {
       tab = 8,
       vline = 2,
     },
-  }
+  },
 }

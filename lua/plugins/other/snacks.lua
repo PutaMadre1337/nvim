@@ -1,6 +1,7 @@
 return {
   {
     "snacks.nvim",
+    event = "VeryLazy",
     opts = {
       indent = { enabled = true },
       input = { enabled = true },
@@ -20,6 +21,7 @@ return {
   },
   {
     "folke/snacks.nvim",
+    event = "VeryLazy",
     opts = {
       terminal = {
         bo = {

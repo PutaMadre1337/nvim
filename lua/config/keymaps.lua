@@ -1,12 +1,14 @@
 require("config.functions")
 local map = vim.keymap.set
 
+map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
+
 map("n", "<leader>vq", "<cmd>Quicknotes<cr>", { desc = "Open quicknotes" })
 map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" })
 -- map("n", "t", "<cmd>Dooing<cr>", { desc = "Clear quicknotes" })
-map("n", "t", function()
-  Snacks.terminal(nil, { cwd = LazyVim.root() })
-end, { desc = "Terminal (Root Dir)" })
+-- map("n", "t", function()
+--   Snacks.terminal(nil, { cwd = LazyVim.root() })
+-- end, { desc = "Terminal (Root Dir)" })
 
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
 map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })

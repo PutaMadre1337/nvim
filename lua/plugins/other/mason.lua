@@ -1,11 +1,12 @@
 return {
   {
     "mason.nvim",
-    { "williamboman/mason-lspconfig.nvim", config = function() end },
+    event = "VeryLazy",
+    { "williamboman/mason-lspconfig.nvim", event = "VeryLazy", config = function() end },
   },
   {
-
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",

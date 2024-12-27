@@ -1,1 +1,1 @@
-return { 'lewis6991/impatient.nvim' }
+return { "lewis6991/impatient.nvim", event = "VeryLazy" }
