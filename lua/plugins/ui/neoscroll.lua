@@ -1,5 +1,7 @@
 return {
   "karb94/neoscroll.nvim",
+  cond = not (vim.g.neovide or false),
+  event = "LazyFile",
   config = function()
     require("neoscroll").setup({
       mappings = {

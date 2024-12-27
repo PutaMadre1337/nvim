@@ -40,14 +40,6 @@ require("lazy").setup({
     notify = false, -- notify on update
   }, -- automatically check for plugin updates
 
-  {
-    "3rd/image.nvim",
-    opts = {},
-  },
-}, {
-  rocks = {
-    hererocks = true, -- recommended if you do not have global installation of Lua 5.1.
-  },
   performance = {
     rtp = {
       disabled_plugins = {
