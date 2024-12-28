@@ -6,7 +6,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   config = function()
-    require("go").setup()
+    require("overseer.template.go").setup()
   end,
   event = { "CmdlineEnter" },
   lazy = true,
