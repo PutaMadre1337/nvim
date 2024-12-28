@@ -20,6 +20,7 @@ return {
   event = "InsertEnter",
 
   ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
   opts = {
     snippets = {
       expand = function(snippet, _)
@@ -37,7 +38,6 @@ return {
     },
     completion = {
       accept = {
-        border = "rounded",
         -- experimental auto-brackets support
         auto_brackets = {
           enabled = true,
@@ -50,12 +50,13 @@ return {
         },
       },
       documentation = {
-        border = "rounded",
+        window = {
+          border = "rounded",
+        },
         auto_show = true,
         auto_show_delay_ms = 200,
       },
       ghost_text = {
-        border = "rounded",
         enabled = vim.g.ai_cmp,
       },
     },
@@ -72,7 +73,7 @@ return {
     },
 
     keymap = {
-      preset = "default",
+      preset = "enter",
       ["<C-y>"] = { "select_and_accept" },
     },
   },
@@ -104,17 +105,6 @@ return {
           LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
           "fallback",
         }
-      end
-    end
-
-    ---  NOTE: compat with latest version. Currenlty 0.7.6
-    if not vim.g.lazyvim_blink_main then
-      ---@diagnostic disable-next-line: inject-field
-      opts.sources.completion = opts.sources.completion or {}
-      opts.sources.completion.enabled_providers = enabled
-      if vim.tbl_get(opts, "completion", "menu", "draw", "treesitter") then
-        ---@diagnostic disable-next-line: assign-type-mismatch
-        opts.completion.menu.draw.treesitter = true
       end
     end
 
