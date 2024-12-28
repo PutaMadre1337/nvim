@@ -44,14 +44,14 @@ return {
         },
       },
       menu = {
-        border = "rounded",
+        border = "double",
         draw = {
           treesitter = { "lsp" },
         },
       },
       documentation = {
         window = {
-          border = "rounded",
+          border = "double",
         },
         auto_show = true,
         auto_show_delay_ms = 200,
