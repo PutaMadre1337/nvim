@@ -29,3 +29,16 @@ vim.api.nvim_create_user_command("RemoveComments", function()
   -- Should save the file after removing comments
   vim.cmd("update")
 end, {})
+
+vim.api.nvim_create_user_command("CountLines", function()
+  vim.cmd("new")
+  local output = vim.fn.system("countlines -f tree")
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(output, "\n"))
+  vim.bo.buftype = "nofile"
+  vim.bo.bufhidden = "hide"
+  vim.bo.swapfile = false
+  vim.wo.wrap = false
+  vim.wo.number = false
+  vim.wo.relativenumber = false
+  vim.bo.filetype = "man"
+end, {})
