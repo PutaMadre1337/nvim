@@ -16,7 +16,7 @@ vim.api.nvim_create_user_command("RemoveComments", function()
   local language_tree = vim.treesitter.get_parser(bufnr)
   local tree = language_tree:parse()[1]
   local query = vim.treesitter.query.parse(
-    ---@diagnostic disable-next-line: invisible
+
     language_tree._lang,
     [[
 (comment) @comment
@@ -26,13 +26,14 @@ vim.api.nvim_create_user_command("RemoveComments", function()
     local start_row, start_col, end_row, end_col = match[1]:range()
     vim.api.nvim_buf_set_text(bufnr, start_row, start_col, end_row, end_col, { "" })
   end
-  -- Should save the file after removing comments
+
   vim.cmd("update")
 end, {})
 
-vim.api.nvim_create_user_command("CountLines", function()
+vim.api.nvim_create_user_command("Tammy", function(args)
   vim.cmd("new")
-  local output = vim.fn.system("countlines -f tree")
+  local command = "tammy " .. args.args
+  local output = vim.fn.system(command)
   vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(output, "\n"))
   vim.bo.buftype = "nofile"
   vim.bo.bufhidden = "hide"
@@ -41,4 +42,6 @@ vim.api.nvim_create_user_command("CountLines", function()
   vim.wo.number = false
   vim.wo.relativenumber = false
   vim.bo.filetype = "man"
-end, {})
+end, {
+  nargs = "*",
+})
