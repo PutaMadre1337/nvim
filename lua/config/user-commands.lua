@@ -31,17 +31,54 @@ vim.api.nvim_create_user_command("RemoveComments", function()
 end, {})
 
 vim.api.nvim_create_user_command("Tammy", function(args)
-  vim.cmd("new")
-  local command = "tammy " .. args.args
-  local output = vim.fn.system(command)
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(output, "\n"))
-  vim.bo.buftype = "nofile"
-  vim.bo.bufhidden = "hide"
-  vim.bo.swapfile = false
-  vim.wo.wrap = false
-  vim.wo.number = false
-  vim.wo.relativenumber = false
-  vim.bo.filetype = "man"
+  local buf = vim.api.nvim_create_buf(false, true)
+
+  local output = vim.fn.system("tammy " .. args.args)
+  local lines = vim.split(output, "\n")
+
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+
+  local win_width = vim.o.columns
+  local win_height = vim.o.lines
+
+  local height = math.floor(win_height * 0.5)
+
+  local max_line_length = 0
+  for _, line in ipairs(lines) do
+    max_line_length = math.max(max_line_length, vim.fn.strdisplaywidth(line))
+  end
+
+  local width = math.min(max_line_length + 4, math.floor(win_width * 0.8))
+
+  local row = math.floor((win_height - height) / 2)
+  local col = math.floor((win_width - width) / 2)
+
+  local tammy_win = vim.api.nvim_open_win(buf, true, {
+    border = "rounded",
+    relative = "editor",
+    width = width,
+    height = height,
+    row = row,
+    col = col,
+  })
+
+  vim.bo[buf].swapfile = false
+  vim.wo[tammy_win].wrap = false
+  vim.wo[tammy_win].number = false
+  vim.wo[tammy_win].relativenumber = false
+  vim.bo[buf].buftype = "nofile"
+  vim.bo[buf].bufhidden = "hide"
+  vim.bo[buf].filetype = "man"
+
+  vim.api.nvim_create_autocmd("WinLeave", {
+    callback = function()
+      if vim.api.nvim_win_is_valid(tammy_win) then
+        vim.api.nvim_win_close(tammy_win, true)
+      end
+    end,
+    group = vim.api.nvim_create_augroup("TammyWindowClose", { clear = true }),
+    buffer = buf,
+  })
 end, {
   nargs = "*",
   complete = function()
