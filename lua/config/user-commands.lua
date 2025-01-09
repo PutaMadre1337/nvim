@@ -41,7 +41,8 @@ vim.api.nvim_create_user_command("Tammy", function(args)
   local win_width = vim.o.columns
   local win_height = vim.o.lines
 
-  local height = math.floor(win_height * 0.5)
+  local output_line_count = #lines
+  local height = math.max(1, math.min(output_line_count + 2, math.floor(win_height * 0.8)))
 
   local max_line_length = 0
   for _, line in ipairs(lines) do

@@ -14,7 +14,13 @@ map("n", "t", "<cmd><cr>", { desc = "Clear quicknotes" })
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
 map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })
 
-map("n", "<C-g>", "ggVG", { desc = "Select all" })
+map("n", "<C-g>", function()
+  vim.cmd([[
+  normal! ggVG
+  normal! y
+  " normal! <C-o>
+  ]])
+end, { desc = "Select all" })
 
 map("n", "<C-c>", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Search and replace word under the cursor" })
 
