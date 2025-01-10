@@ -1,15 +1,13 @@
 require("config.user-commands")
 local map = vim.keymap.set
 
-map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
+-- vim.keymap.del("n", "s")
+
+-- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 
 map("n", "<leader>vq", "<cmd>Quicknotes<cr>", { desc = "Open quicknotes" })
 map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" })
 map("n", "t", "<cmd><cr>", { desc = "Clear quicknotes" })
--- map("n", "t", "<cmd>Dooing<cr>", { desc = "Clear quicknotes" })
--- map("n", "t", function()
---   Snacks.terminal(nil, { cwd = LazyVim.root() })
--- end, { desc = "Terminal (Root Dir)" })
 
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
 map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })
@@ -17,8 +15,6 @@ map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })
 map("n", "<C-g>", function()
   vim.cmd([[
   normal! ggVG
-  normal! y
-  " normal! <C-o>
   ]])
 end, { desc = "Select all" })
 
