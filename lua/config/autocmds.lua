@@ -178,6 +178,27 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.cmd("normal! F#")
       vim.cmd("normal! x")
     end)
+
+    local function toggle_todo()
+      local line = vim.fn.getline(".")
+      local col = vim.fn.col(".")
+
+      local start_pos, end_pos = line:find("%[x%]") -- ищем [x]
+
+      if start_pos then
+        line = line:sub(1, start_pos) .. " ]" .. line:sub(end_pos + 1)
+      else
+        start_pos, end_pos = line:find("%[ %]") -- ищем [ ]
+        if start_pos then
+          line = line:sub(1, start_pos) .. "x]" .. line:sub(end_pos + 1)
+        end
+      end
+
+      vim.fn.setline(".", line)
+      vim.fn.cursor(".", col)
+    end
+
+    vim.keymap.set("n", "T", toggle_todo, { desc = "Toggle todo item" })
   end,
 })
 

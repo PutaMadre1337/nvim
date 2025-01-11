@@ -7,10 +7,10 @@ local map = vim.keymap.set
 
 map("n", "<leader>vq", "<cmd>Quicknotes<cr>", { desc = "Open quicknotes" })
 map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" })
-map("n", "t", "<cmd><cr>", { desc = "Clear quicknotes" })
+map("n", "t", "s", { desc = "Replace character and enter insert mode" })
 
 map("n", "<F1>", "<cmd>SearchSelected<cr>")
-map("v", "P", '"_c<Esc>p', { desc = "Paste without copying into register" })
+map("v", "_p", '"_c<Esc>p', { desc = "Paste without copying into register" })
 
 map("n", "<C-g>", function()
   vim.cmd([[
