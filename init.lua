@@ -1,2 +1,2 @@
-require("config.lazy")
 vim.loader.enable()
+require("config.lazy")

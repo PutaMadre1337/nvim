@@ -166,7 +166,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
-  pattern = { "markdown" },
+  pattern = { "markdown", "md" },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
