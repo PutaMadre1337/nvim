@@ -1,9 +1,13 @@
 require("config.user-commands")
 local map = vim.keymap.set
 
--- vim.keymap.del("n", "s")
+-- vim.keymap.del("n", "<leader>dp")
 
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
+
+map("n", "<leader>d.", function()
+  require("snacks").terminal("posting", { cwd = LazyVim.root() })
+end)
 
 map("n", "<leader>vq", "<cmd>Quicknotes<cr>", { desc = "Open quicknotes" })
 map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" })
