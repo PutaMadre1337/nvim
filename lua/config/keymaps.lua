@@ -34,10 +34,12 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
-map("i", "<C-h>", "<Left>", { desc = "Go to Left Window", remap = true })
-map("i", "<C-р>", "<Left>", { desc = "Go to Left Window", remap = true })
-map("i", "<C-l>", "<Right>", { desc = "Go to Right Window", remap = true })
-map("i", "<C-д>", "<Right>", { desc = "Go to Right Window", remap = true })
+map("i", "<C-l>", "<Right><BS>")
+
+map("i", "<M-h>", "<Left>")
+map("i", "<M-р>", "<Left>")
+map("i", "<M-l>", "<Right>")
+map("i", "<M-д>", "<Right>")
 
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
