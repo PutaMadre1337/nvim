@@ -87,9 +87,9 @@ return {
     },
 
     sources = {
-
       compat = {},
       default = { "lsp", "path", "snippets", "buffer", "markdown" },
+      -- default = { "lsp", "path", "snippets", "buffer" },
       providers = {
         markdown = {
           name = "RenderMarkdown",

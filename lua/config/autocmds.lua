@@ -145,25 +145,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
---   group = augroup("wrap_spell"),
---   pattern = { "markdown" },
---   callback = function()
---     vim.cmd("AerialOpen")
---
---     -- Получаем текущее окно
---     local current_window = vim.api.nvim_get_current_win()
---     -- Получаем номер буфера в текущем окне
---     local buf = vim.api.nvim_win_get_buf(current_window)
---     -- Получаем тип файла для этого буфера
---     local filetype = vim.bo[buf].filetype
---
---     if filetype == "aerial" then
---       vim.cmd("normal! <C-w>w")
---     end
---   end,
--- })
-
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
   pattern = { "markdown", "md" },
@@ -173,8 +154,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
     -- Maps for markdown
     -- Headers
-    vim.keymap.set("n", ">>", "I#<esc>")
-    vim.keymap.set("n", "<<", function()
+    vim.keymap.set("n", "-", "I#<esc>")
+    vim.keymap.set("n", "=", function()
       vim.cmd("normal! F#")
       vim.cmd("normal! x")
     end)
@@ -203,9 +184,16 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "go", "gomod" },
+  pattern = { "go", "gomod", "html", "css", "json" },
   callback = function()
     vim.keymap.set("n", "<leader>ct", "<cmd>!go mod tidy<cr>", { desc = "Go mod tidy" })
+
+    vim.keymap.set("n", "<leader>dr", "<cmd>Rest run<cr>", { desc = "Run rest" })
+    vim.keymap.set("n", "<leader>d.", function()
+      require("snacks").terminal("posting", { cwd = LazyVim.root() })
+    end, { desc = "Open posting" })
+
+    vim.keymap.set("n", "<leader>dl", "<cmd>LivePreview start<cr>", { desc = "Start live preview" })
   end,
 })
 

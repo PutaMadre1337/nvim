@@ -5,7 +5,7 @@ vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 vim.g.root_spec = { "lsp", { "Coding", ".git", "nav.md", "lua", "go.mod", "cmd" }, "cwd" }
 vim.g.trouble_lualine = true
 vim.g.lazyvim_picker = "fzf"
-vim.g.bullets_set_mappings = 0
+-- vim.g.bullets_set_mappings = 0
 
 local opt = vim.opt
 
