@@ -149,10 +149,6 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
   pattern = { "markdown", "md" },
   callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-
-    -- Maps for markdown
     -- Headers
     vim.keymap.set("n", "-", "I#<esc>")
     vim.keymap.set("n", "=", function()

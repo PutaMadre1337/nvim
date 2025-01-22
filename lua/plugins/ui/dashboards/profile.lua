@@ -80,7 +80,7 @@ L -> List session
           ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
-          ["d"] = "<cmd>FzfLua files cwd='$HOME/Development/Golang/'<cr>",
+          ["d"] = "<cmd>FzfLua files cwd='$HOME/Development/'<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "<cmd>ene | startinsert<cr>",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",

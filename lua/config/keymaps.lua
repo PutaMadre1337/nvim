@@ -7,6 +7,7 @@ vim.keymap.del("n", "[t")
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 
 map("n", "c", '"_c')
+map("n", "C", '"_C')
 
 map("n", "<leader>vq", "<cmd>Quicknotes<cr>", { desc = "Open quicknotes" })
 map("n", "<leader>vQ", "<cmd>QuicknotesClear<cr>", { desc = "Clear quicknotes" })
