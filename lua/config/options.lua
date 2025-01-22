@@ -9,6 +9,8 @@ vim.g.lazyvim_picker = "fzf"
 
 local opt = vim.opt
 
+vim.o.encoding = "utf-8"
+vim.o.fileencoding = "utf-8"
 opt.termguicolors = true
 opt.autowrite = true
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
