@@ -4,6 +4,10 @@ local map = vim.keymap.set
 vim.keymap.del("n", "]t")
 vim.keymap.del("n", "[t")
 
+map("n", "<leader>gg", function()
+  require("snacks").terminal("lazygit", { cwd = LazyVim.root() })
+end)
+
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 
 map("n", "c", '"_c')
