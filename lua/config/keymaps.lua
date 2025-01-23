@@ -6,7 +6,7 @@ vim.keymap.del("n", "[t")
 
 map("n", "<leader>gg", function()
   require("snacks").terminal("lazygit", { cwd = LazyVim.root() })
-end)
+end, { desc = "Open LazyGit" })
 
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 
