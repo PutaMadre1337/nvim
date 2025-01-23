@@ -135,20 +135,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- wrap and check for spell in text filetypes
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("wrap_spell"),
-  pattern = { "text", "plaintex", "typst", "gitcommit", "markdown", "md" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
-})
-
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
   pattern = { "markdown", "md" },
   callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+
     -- Headers
     vim.keymap.set("n", "-", "I#<esc>")
     vim.keymap.set("n", "=", function()
