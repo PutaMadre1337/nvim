@@ -168,7 +168,7 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.fn.cursor(".", col)
     end
 
-    vim.keymap.set("n", "T", toggle_todo, { desc = "Toggle todo item" })
+    vim.keymap.set("n", "-", toggle_todo, { desc = "Toggle todo item" })
   end,
 })
 
