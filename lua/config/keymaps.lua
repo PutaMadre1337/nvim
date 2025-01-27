@@ -1,8 +1,11 @@
 require("config.user-commands")
 local map = vim.keymap.set
 
-vim.keymap.del("n", "]t")
-vim.keymap.del("n", "[t")
+vim.keymap.del("n", "<leader>.")
+vim.keymap.del("n", "<leader>S")
+vim.keymap.del("n", "<leader>dph")
+vim.keymap.del("n", "<leader>dpp")
+vim.keymap.del("n", "<leader>dps")
 
 map("n", "<leader>gg", function()
   require("snacks").terminal("lazygit", { cwd = LazyVim.root() })
