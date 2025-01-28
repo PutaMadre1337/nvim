@@ -1,6 +1,7 @@
 return {
   {
     "Exafunction/codeium.nvim",
+    enabled = false,
     cmd = "Codeium",
     event = "InsertEnter",
     build = ":Codeium Auth",
@@ -10,8 +11,8 @@ return {
         enabled = not vim.g.ai_cmp,
         key_bindings = {
           accept = false, -- handled by nvim-cmp / blink.cmp
-          next = "<M-]>",
-          prev = "<M-[>",
+          -- next = "<M-]>",
+          -- prev = "<M-[>",
         },
       },
     },
