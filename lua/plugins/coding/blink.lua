@@ -1,4 +1,4 @@
-local borderType = "double"
+local borderType = "rounded"
 
 return {
   "saghen/blink.cmp",

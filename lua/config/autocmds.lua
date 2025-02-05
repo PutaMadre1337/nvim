@@ -143,8 +143,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = true
 
     -- Headers
-    vim.keymap.set("n", "-", "I#<esc>")
-    vim.keymap.set("n", "=", function()
+    vim.keymap.set("n", "]h", "I#<esc>")
+    vim.keymap.set("n", "[h", function()
       vim.cmd("normal! F#")
       vim.cmd("normal! x")
     end)
