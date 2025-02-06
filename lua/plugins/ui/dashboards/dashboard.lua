@@ -2,6 +2,7 @@ return {
   {
     "nvimdev/dashboard-nvim",
     cond = (vim.g.neovide or false),
+    enabled = false,
     opts = function()
       local logo = require("plugins.ui.logos.026")
 

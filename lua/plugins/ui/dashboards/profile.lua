@@ -8,7 +8,7 @@ return {
       local comp = require("profile.components")
       require("profile").setup({
 
-        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/mumia.png",
+        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/harley_quinn.png",
         avatar_opts = {
           avatar_width = 150,
           avatar_height = 150,
@@ -30,7 +30,7 @@ return {
           statusline = false,
           tabline = false,
         },
-        disable_keys = { "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
+        disable_keys = { "h", "l", "j", "k", "<Left>", "<Right>", "<Up>", "<Down>", "<C-f>" },
         format = function()
           comp:avatar()
           comp:separator_render()
@@ -47,7 +47,6 @@ M -> Notes
 R -> Recently
 F -> Find files
 N -> New file
-D -> Development
 ]],
                 },
                 {
@@ -77,10 +76,9 @@ L -> List session
           ["f"] = "<cmd>lua LazyVim.pick()()<cr>",
           ["c"] = "<cmd>FzfLua files cwd='$HOME/.config/nvim'<cr>",
           ["h"] = "<cmd>FzfLua files cwd='$HOME/.config/hypr'<cr>",
-          ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
+          ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents'<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
-          ["d"] = "<cmd>FzfLua files cwd='$HOME/Development/'<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "<cmd>ene | startinsert<cr>",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",
@@ -110,11 +108,11 @@ L -> List session
         processor = "magick_cli", -- or "magick_cli"
         integrations = {
           markdown = {
-            enabled = false,
-            clear_in_insert_mode = false,
+            enabled = true,
+            clear_in_insert_mode = true,
             download_remote_images = true,
             only_render_image_at_cursor = false,
-            floating_windows = false, -- if true, images will be rendered in floating markdown windows
+            floating_windows = true, -- if true, images will be rendered in floating markdown windows
             filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
           },
           neorg = {
@@ -138,7 +136,7 @@ L -> List session
         max_height_window_percentage = 50,
         window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
         window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-        editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
+        editor_only_render_when_focused = true, -- auto show/hide images when the editor gains/looses focus
         tmux_show_only_in_active_window = false, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
         hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" }, -- render image files as images when opened
       })
