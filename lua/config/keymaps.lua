@@ -36,6 +36,9 @@ map("n", "yc", "yy<cmd>normal gcc<cr>p", { desc = "Duplicate a line and comment 
 map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
 map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
 map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+map({ "n", "o", "x" }, "ц", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+map({ "n", "o", "x" }, "у", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+map({ "n", "o", "x" }, "и", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
@@ -46,6 +49,9 @@ map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
 map("i", "<C-l>", "<Right><BS>")
+map("i", "<C-д>", "<Right><BS>")
+map("i", "<C-р>", "<BS>")
+map("i", "<C-ц>", "<C-w>")
 
 map("i", "<M-h>", "<Left>")
 map("i", "<M-р>", "<Left>")
