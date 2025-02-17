@@ -2,6 +2,7 @@ require("config.user-commands")
 local map = vim.keymap.set
 
 vim.keymap.del("n", "<leader>.")
+-- vim.keymap.del("n", "<leader>ss")
 vim.keymap.del("n", "<leader>S")
 vim.keymap.del("n", "<leader>dph")
 vim.keymap.del("n", "<leader>dpp")
