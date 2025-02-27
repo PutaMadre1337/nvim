@@ -42,11 +42,10 @@ return {
                   title = "Files",
                   description = [[
 C -> Neovim
-H -> Hyprland
 M -> Notes
 R -> Recently
-F -> Find files
-N -> New file
+F -> Find
+N -> New
 ]],
                 },
                 {
@@ -75,7 +74,6 @@ L -> List session
           ["r"] = "<cmd>FzfLua oldfiles<cr>",
           ["f"] = "<cmd>lua LazyVim.pick()()<cr>",
           ["c"] = "<cmd>FzfLua files cwd='$HOME/.config/nvim'<cr>",
-          ["h"] = "<cmd>FzfLua files cwd='$HOME/.config/hypr'<cr>",
           ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents'<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
