@@ -72,7 +72,6 @@ return {
           fallbacks = { "lsp" },
         },
       },
-      cmdline = {},
     },
 
     keymap = {
