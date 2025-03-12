@@ -74,7 +74,7 @@ L -> List session
           ["r"] = "<cmd>FzfLua oldfiles<cr>",
           ["f"] = "<cmd>lua LazyVim.pick()()<cr>",
           ["c"] = "<cmd>FzfLua files cwd='$HOME/.config/nvim'<cr>",
-          ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents'<cr>",
+          ["m"] = "<cmd>FzfLua files cwd='$HOME/Documents/Notes'<cr>",
           ["g"] = "<cmd>lua require('telescope.builtin').live_grep()<cr>",
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
           ["q"] = "<cmd>q<cr>",
