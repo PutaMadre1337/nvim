@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   prompts = {
     Yarrr = {
-      system_prompt = "Always answer in Russian, do not leave comments in the code",
+      system_prompt = "Always answer in Russian language, do not leave comments in the code",
     },
   },
   keys = {
@@ -12,7 +12,7 @@ return {
     {
       "<leader>aa",
       function()
-        return require("CopilotChat").toggle()
+        require("CopilotChat").toggle()
       end,
       desc = "Toggle (CopilotChat)",
       mode = { "n", "v" },
@@ -20,7 +20,7 @@ return {
     {
       "<leader>ax",
       function()
-        return require("CopilotChat").reset()
+        require("CopilotChat").reset()
       end,
       desc = "Clear (CopilotChat)",
       mode = { "n", "v" },
