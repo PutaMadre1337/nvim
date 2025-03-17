@@ -8,7 +8,7 @@ return {
       local comp = require("profile.components")
       require("profile").setup({
 
-        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/harley_quinn.png",
+        avatar_path = "/home/username/.config/nvim/lua/plugins/ui/pictures/girl.png",
         avatar_opts = {
           avatar_width = 150,
           avatar_height = 150,
@@ -43,6 +43,7 @@ return {
                   description = [[
 C -> Neovim
 M -> Notes
+I -> New note
 R -> Recently
 F -> Find
 N -> New
@@ -79,6 +80,7 @@ L -> List session
           ["s"] = "<cmd>lua require('persistence').load()<cr>",
           ["q"] = "<cmd>q<cr>",
           ["n"] = "<cmd>ene | startinsert<cr>",
+          ["i"] = "<cmd>ene | execute 'edit ~/Documents/Notes/' . input('Filename: ') . '.md' | startinsert<cr>",
           ["l"] = "<cmd>lua require('persistence').select()<cr>",
         },
       }
