@@ -2,7 +2,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = true,
-    ft = "markdown",
+    ft = { "copilot-chat", "markdown" },
     -- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons", lazy = true }, -- if you prefer nvim-web-devicons
