@@ -5,7 +5,7 @@ vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 vim.g.root_spec = {
   "lsp",
   {
-    "main.rs",
+    "src",
     "Dockerfile",
     "docker-compose.yml",
     "Jenkinsfile",
