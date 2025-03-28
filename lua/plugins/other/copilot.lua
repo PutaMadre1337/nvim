@@ -11,9 +11,9 @@ return {
       answer_header = "  Copilot ",
       model = "DeepSeek-V3",
       window = {
-        width = 0.9,
-        height = 0.7,
-        layout = "float",
+        -- width = 0.9,
+        -- height = 0.7,
+        -- layout = "float",
         border = "rounded",
       },
     }

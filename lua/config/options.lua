@@ -2,7 +2,22 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = true
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
-vim.g.root_spec = { "lsp", { "main.rs", "Coding", ".git", "nav.md", "lua", "go.mod", "cmd" }, "cwd" }
+vim.g.root_spec = {
+  "lsp",
+  {
+    "main.rs",
+    "Dockerfile",
+    "docker-compose.yml",
+    "Jenkinsfile",
+    "Vagrantfile",
+    ".git",
+    "nav.md",
+    "lua",
+    "go.mod",
+    "cmd",
+  },
+  "cwd",
+}
 vim.g.trouble_lualine = true
 vim.g.lazyvim_picker = "fzf"
 -- vim.g.bullets_set_mappings = 0
@@ -25,6 +40,7 @@ local opt = vim.opt
 
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
+opt.laststatus = 3
 opt.autowrite = true
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 opt.completeopt = "menu,menuone,noselect"

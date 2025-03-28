@@ -23,8 +23,8 @@ m("n", "<leader>gg", function()
   require("snacks").terminal("lazygit", { cwd = LazyVim.root() })
 end, { desc = "Open LazyGit" })
 m("n", "<leader>gC", function()
-  require("snacks").terminal("git add . && oco", { cwd = LazyVim.root() })
-end, { desc = "Open LazyGit" })
+  require("snacks").terminal("oco --fgm", { cwd = LazyVim.root() })
+end, { desc = "Generate commit message" })
 
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 
