@@ -9,15 +9,15 @@ d("n", "<leader>dpp")
 d("n", "<leader>dps")
 
 local pantran = require("pantran")
-local opts = { noremap = true, silent = true, expr = true, desc = "Translate" }
 
+m("n", "<leader>k", '<cmd>lua require("kubectl").toggle({ tab = false })<cr>')
 m({ "n", "x" }, "<leader>Tre", "<cmd>Pantran target=en<cr>", { desc = "Translate on english" })
 m({ "n", "x" }, "<leader>Trr", "<cmd>Pantran target=ru<cr>", { desc = "Translate on russian" })
-m("n", "<leader>Tr", pantran.motion_translate, opts)
+m("n", "<leader>Tr", pantran.motion_translate)
 m("n", "<leader>Trv", function()
   return pantran.motion_translate() .. "_"
-end, opts)
-m("x", ",", pantran.motion_translate, opts)
+end)
+m("x", ",", pantran.motion_translate)
 
 m("n", "<leader>gg", function()
   require("snacks").terminal("lazygit", { cwd = LazyVim.root() })
@@ -25,6 +25,10 @@ end, { desc = "Open LazyGit" })
 m("n", "<leader>gC", function()
   require("snacks").terminal("oco --fgm", { cwd = LazyVim.root() })
 end, { desc = "Generate commit message" })
+
+m("n", "<leader>D", function()
+  require("snacks").terminal("lazydocker", { cwd = LazyVim.root() })
+end, { desc = "Open LazyDocker" })
 
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 
