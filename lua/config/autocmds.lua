@@ -142,12 +142,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
 
-    -- Headers
-    vim.keymap.set("n", "]h", "I#<esc>")
+    -- Move to next/previous comment line and remove/add comment symbol
+    vim.keymap.set("n", "]h", "I#<esc>", { desc = "Add comment symbol at the start of the line" })
     vim.keymap.set("n", "[h", function()
       vim.cmd("normal! F#")
       vim.cmd("normal! x")
-    end)
+    end, { desc = "Remove comment symbol from the start of the line" })
 
     local function toggle_todo()
       local line = vim.fn.getline(".")
