@@ -25,10 +25,12 @@ end, { desc = "Open LazyGit" })
 m("n", "<leader>gC", function()
   require("snacks").terminal("oco --fgm", { cwd = LazyVim.root() })
 end, { desc = "Generate commit message" })
-
 m("n", "<leader>D", function()
-  require("snacks").terminal("lazydocker", { cwd = LazyVim.root() })
+  require("snacks").terminal("lazydocker")
 end, { desc = "Open LazyDocker" })
+m("n", "<leader>B", function()
+  require("snacks").terminal("btop")
+end, { desc = "Open Btop" })
 
 -- map("n", "<leader>qa", "<cmd>ASToggle<CR>", {})
 

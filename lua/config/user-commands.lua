@@ -30,10 +30,10 @@ vim.api.nvim_create_user_command("RemoveComments", function()
   vim.cmd("update")
 end, {})
 
-vim.api.nvim_create_user_command("Tammy", function(args)
+vim.api.nvim_create_user_command("Nim", function(args)
   local buf = vim.api.nvim_create_buf(false, true)
 
-  local output = vim.fn.system("tammy " .. args.args)
+  local output = vim.fn.system("nim " .. args.args)
   local lines = vim.split(output, "\n")
 
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
@@ -54,7 +54,7 @@ vim.api.nvim_create_user_command("Tammy", function(args)
   local row = math.floor((win_height - height) / 2)
   local col = math.floor((win_width - width) / 2)
 
-  local tammy_win = vim.api.nvim_open_win(buf, true, {
+  local nim_win = vim.api.nvim_open_win(buf, true, {
     border = "rounded",
     relative = "editor",
     width = width,
@@ -64,25 +64,25 @@ vim.api.nvim_create_user_command("Tammy", function(args)
   })
 
   vim.bo[buf].swapfile = false
-  vim.wo[tammy_win].wrap = false
-  vim.wo[tammy_win].number = false
-  vim.wo[tammy_win].relativenumber = false
+  vim.wo[nim_win].wrap = false
+  vim.wo[nim_win].number = false
+  vim.wo[nim_win].relativenumber = false
   vim.bo[buf].buftype = "nofile"
   vim.bo[buf].bufhidden = "hide"
   vim.bo[buf].filetype = "man"
 
   vim.api.nvim_create_autocmd("WinLeave", {
     callback = function()
-      if vim.api.nvim_win_is_valid(tammy_win) then
-        vim.api.nvim_win_close(tammy_win, true)
+      if vim.api.nvim_win_is_valid(nim_win) then
+        vim.api.nvim_win_close(nim_win, true)
       end
     end,
-    group = vim.api.nvim_create_augroup("TammyWindowClose", { clear = true }),
+    group = vim.api.nvim_create_augroup("NimWindowClose", { clear = true }),
     buffer = buf,
   })
 end, {
   nargs = "*",
   complete = function()
-    return { "-f list ", "-f tree ", "-ft ", "-ft go ", "-h ", "-i " }
+    return { "-f total-lines ", "-f name-line ", "--binary ", "-hidden ", "--show-all ", "--log " }
   end,
 })

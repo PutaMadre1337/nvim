@@ -9,11 +9,9 @@ return {
       auto_insert_mode = true,
       question_header = "  " .. user .. " ",
       answer_header = "  Copilot ",
-      model = "DeepSeek-V3",
+      model = "gpt-4",
       window = {
-        -- width = 0.9,
-        -- height = 0.7,
-        -- layout = "float",
+        width = 0.3,
         border = "rounded",
       },
     }

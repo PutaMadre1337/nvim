@@ -11,7 +11,6 @@ vim.g.root_spec = {
     "Jenkinsfile",
     "Vagrantfile",
     ".git",
-    "nav.md",
     "lua",
     "go.mod",
     "cmd",
@@ -38,6 +37,8 @@ vim.g.bullets_custom_mappings = {
 
 local opt = vim.opt
 
+vim.opt.numberwidth = 3
+vim.opt.signcolumn = "yes:1"
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 opt.laststatus = 3
@@ -80,7 +81,6 @@ opt.shiftwidth = 2
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false
 opt.sidescrolloff = 8
-opt.signcolumn = "yes"
 opt.smartcase = true
 opt.smartindent = true
 opt.spelllang = { "en", "ru" }

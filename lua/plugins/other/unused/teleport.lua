@@ -1,3 +1,0 @@
-return {
-  { 'franespeche/teleport.nvim' },
-}

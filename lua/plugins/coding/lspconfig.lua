@@ -11,7 +11,6 @@ return {
       -- options for vim.diagnostic.config()
       ---@type vim.diagnostic.Opts
       diagnostics = {
-        enabled = false,
         underline = true,
         update_in_insert = false,
         virtual_text = {
@@ -29,6 +28,12 @@ return {
             [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
             [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
             [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+          },
+          numhl = {
+            [vim.diagnostic.severity.WARN] = "WarningMsg",
+            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+            [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+            [vim.diagnostic.severity.HINT] = "DiagnosticHint",
           },
         },
       },
