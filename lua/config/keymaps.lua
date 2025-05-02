@@ -3,6 +3,8 @@ local m = vim.keymap.set
 local d = vim.keymap.del
 
 d("n", "<leader>.")
+d("n", "<leader>L")
+d("n", "<leader>D")
 d("n", "<leader>l")
 d("n", "<leader>S")
 d("n", "<leader>dph")
