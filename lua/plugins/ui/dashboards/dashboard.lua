@@ -1,10 +1,10 @@
 return {
   {
     "nvimdev/dashboard-nvim",
-    cond = (vim.g.neovide or false),
-    enabled = false,
+    -- cond = (vim.g.neovide or false),
+    enabled = true,
     opts = function()
-      local logo = require("plugins.ui.logos.026")
+      local logo = require("plugins.ui.logos.030")
 
       local opts = {
         theme = "doom",

@@ -10,8 +10,6 @@ return {
     "sources.default",
   },
   dependencies = {
-    "Kaiser-Yang/blink-cmp-avante",
-
     "rafamadriz/friendly-snippets",
 
     {
@@ -65,15 +63,9 @@ return {
 
     sources = {
       compat = {},
-      default = { "avante", "lsp", "path", "snippets", "buffer", "markdown" },
+      default = { "lsp", "path", "snippets", "buffer", "markdown" },
       -- default = { "lsp", "path", "snippets", "buffer" },
       providers = {
-        avante = {
-          module = "blink-cmp-avante",
-          name = "Avante",
-          opts = {},
-        },
-
         markdown = {
           name = "RenderMarkdown",
           module = "render-markdown.integ.blink",

@@ -1,8 +1,8 @@
 return {
   {
     "Kurama622/profile.nvim",
-    cond = not (vim.g.neovide or false),
-    enabled = true,
+    -- cond = not (vim.g.neovide or false),
+    enabled = false,
     dependencies = { "3rd/image.nvim" },
     config = function()
       local comp = require("profile.components")

@@ -13,7 +13,7 @@ d("n", "<leader>dps")
 
 local pantran = require("pantran")
 
-m("n", "<leader>k", '<cmd>lua require("kubectl").toggle({ tab = false })<cr>')
+-- m("n", "<leader>k", '<cmd>lua require("kubectl").toggle({ tab = false })<cr>')
 m({ "n", "x" }, "<leader>Tre", "<cmd>Pantran target=en<cr>", { desc = "Translate on english" })
 m({ "n", "x" }, "<leader>Trr", "<cmd>Pantran target=ru<cr>", { desc = "Translate on russian" })
 m("n", "<leader>Tr", pantran.motion_translate)
@@ -72,10 +72,8 @@ m("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 m("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 m("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
-m("i", "<C-l>", "<Right><BS>")
-m("i", "<C-д>", "<Right><BS>")
+m("i", "<C-в>", "<Right><BS>")
 m("i", "<C-р>", "<BS>")
-m("i", "<C-ц>", "<C-w>")
 
 m("i", "<M-h>", "<Left>")
 m("i", "<M-р>", "<Left>")
